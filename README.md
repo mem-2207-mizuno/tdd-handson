@@ -14,20 +14,21 @@
 
 ## ディレクトリ構成
 
-以下はプロジェクトの一例です。
-
 ```
 my-tdd-project/
-├── package.json              # プロジェクトの依存関係・スクリプト定義
-├── README.md                 # このファイル
-├── .gitignore                # Git管理から除外するファイルリスト
-├── src/                      # 実装コードの配置場所
-│   └── sumStringNumbers.js   # 文字列電卓の実装ファイル
-└── __tests__/                # テストコードの配置場所（Jest規約に準拠）
-    └── sumStringNumbers.test.js  # TDD用テストコード
-└── .github/                  # GitHub Actions の設定ファイルを配置するディレクトリ
+├── package.json                  # プロジェクトの依存関係・スクリプト定義
+├── README.md                     # このファイル
+├── .gitignore                    # Git管理から除外するファイルリスト
+├── src/                          # 実装コードやUI関連ファイルの配置場所
+│   ├── index.html                # UIテスト用のHTML
+│   ├── app.js                    # UI操作用のJavaScript
+│   └── sumStringNumbers.js       # 文字列電卓の実装ファイル
+├── __tests__/                    # テストコードの配置場所（Jest規約に準拠）
+│   ├── sumStringNumbers.test.js  # TDD用テストコード
+│   └── app.test.js_              # UIテスト用（末尾に_を付け、初期は実行対象外）
+└── .github/                      # GitHub Actions の設定ファイルを配置するディレクトリ
     └── workflows/
-        └── ci.yml            # CI 用 GitHub Actions 設定ファイル
+        └── ci.yml                # CI 用 GitHub Actions 設定ファイル
 ```
 
 ## 必要な環境
@@ -89,12 +90,6 @@ npx jest
    - テストが通った状態でコードのリファクタリングを行い、品質を向上させます。
 
 このサイクルを繰り返すことで、機能追加や仕様変更に伴う不具合を早期に発見でき、安心してコードを改善できるメリットを体感できます。
-
-## 今後の拡張例
-
-- 改行（`\n`）も数字の区切り文字として認識する。
-- 負の数字が入力された場合に、エラーメッセージと共に例外をスローする。
-- カスタムの区切り文字を指定可能にする。
 
 ## まとめ
 
