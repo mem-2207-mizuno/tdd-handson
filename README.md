@@ -1,15 +1,16 @@
 # TDD Hands-on プロジェクト
 
-このプロジェクトは、テスト駆動開発（TDD）の基本的な流れを体験するためのハンズオン教材です。Node.js環境で動作するシンプルなプロジェクトとして、文字列に含まれる数字の合計を求める関数 `sumStringNumbers` の実装を通じて、TDDのRed/Green/Refactorサイクルを学びます。
+このプロジェクトは、テスト駆動開発（TDD）の基本的な流れを体験するためのハンズオン教材です。Node.js 環境で動作するシンプルなプロジェクトとして、文字列に含まれる数字の合計を求める関数 `sumStringNumbers` の実装を通じて、TDD の Red/Green/Refactor サイクルを学びます。
 
 ## プロジェクト概要
 
-- **目的**: TDDの基本概念（Red/Green/Refactor）の体感と、テストがあることで実装の変更漏れを防止できるメリットを実感する。
-- **実装対象**: 文字列の中にある数字を合計して返す `sumStringNumbers` 関数  
-  ※例: `"1,2"` → `3`、空文字は `0` を返す  
+- **目的**: TDD の基本概念（Red/Green/Refactor）の体感と、テストがあることで実装の変更漏れを防止できるメリットを実感する。
+- **実装対象**: 文字列中にある数字を合計して返す `sumStringNumbers` 関数  
+  例: `"1,2"` → `3`、空文字は `0` を返す
 - **将来的な拡張例**:
-  - 改行も区切り文字として認識
-  - 負の数字が入力された場合にエラーをスロー
+  - 改行も区切り文字として認識する。
+  - 負の数字が入力された場合にエラーをスローする。
+  - カスタムの区切り文字を指定可能にする。
 
 ## ディレクトリ構成
 
@@ -17,13 +18,16 @@
 
 ```
 my-tdd-project/
-├── package.json         # プロジェクトの依存関係・スクリプト定義
-├── README.md            # このファイル
-├── .gitignore           # Git管理から除外するファイルリスト
-├── src/                 # 実装コードの配置場所
+├── package.json              # プロジェクトの依存関係・スクリプト定義
+├── README.md                 # このファイル
+├── .gitignore                # Git管理から除外するファイルリスト
+├── src/                      # 実装コードの配置場所
 │   └── sumStringNumbers.js   # 文字列電卓の実装ファイル
-└── __tests__/           # テストコードの配置場所（Jest規約に準拠）
+└── __tests__/                # テストコードの配置場所（Jest規約に準拠）
     └── sumStringNumbers.test.js  # TDD用テストコード
+└── .github/                  # GitHub Actions の設定ファイルを配置するディレクトリ
+    └── workflows/
+        └── ci.yml            # CI 用 GitHub Actions 設定ファイル
 ```
 
 ## 必要な環境
@@ -36,7 +40,7 @@ my-tdd-project/
 1. **リポジトリをクローン**
 
    ```bash
-   git clone https://your-repo-url.git
+   git clone https://github.com/mem-2207-mizuno/tdd-handson.git
    cd my-tdd-project
    ```
 
